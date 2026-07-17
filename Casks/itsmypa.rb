@@ -1,6 +1,6 @@
 cask "itsmypa" do
-  version "0.1.0"
-  sha256 "da2e455b2fd05bed1370f75c4ab7c3ad64b1e5445a4330b4642eba6cd97f971b"
+  version "0.1.1"
+  sha256 "8ce6ed987e412269d2196b4a83d2e5d67554df625014b32d294430e6f54be58d"
 
   url "https://github.com/simpaira/itsmypa/releases/download/v#{version}/ItsMyPA.dmg"
   name "ItsMyPA"
