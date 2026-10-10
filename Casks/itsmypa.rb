@@ -1,20 +1,18 @@
 cask "itsmypa" do
-  version "0.1.2"
-  sha256 "ef3a402d1ad4944337da0e47e3e636770e75dfc4bf32dd2089133fd791c5b3c8"
+  version "0.2.0"
+  sha256 "0e99c208b3e2be00618d252f208e44663d6e171800029cc56facee7e6e46cf6c"
 
   url "https://github.com/simpaira/itsmypa/releases/download/v#{version}/ItsMyPA.dmg"
   name "ItsMyPA"
-  desc "Private AI meeting notes — transcription, speaker separation and structured notes, 100% on-device"
+  desc "Private AI meeting notes with transcription and speaker labels, on-device"
   homepage "https://github.com/simpaira/itsmypa"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :ventura"
+  depends_on macos: :sonoma
 
   app "ItsMyPA.app"
 
-  zap trash: [
-    "~/Library/Application Support/ItsMyPA",
-  ]
+  zap trash: "~/Library/Application Support/ItsMyPA"
 
   caveats <<~EOS
     ItsMyPA is not signed with an Apple Developer ID (the source is public
@@ -23,7 +21,7 @@ cask "itsmypa" do
       brew reinstall --cask --no-quarantine itsmypa
     or approve it under System Settings → Privacy & Security → "Open Anyway".
 
-    First launch downloads the AI models (~5 GB, one time). After that,
-    ItsMyPA works fully offline.
+    First launch downloads the AI models (~2.6 GB, one time). After that,
+    ItsMyPA works fully offline. Requires macOS 14.6 or newer.
   EOS
 end
